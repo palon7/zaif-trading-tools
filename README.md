@@ -11,6 +11,7 @@ bundler install
 Copy "config.default.rb" to "config.rb".
 
 ## Usage
+Please rename **config.default.rb** to **config.rb** and setup config before start using tools.
 
 ### stealth.rb
 
