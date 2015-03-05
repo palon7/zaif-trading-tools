@@ -1,4 +1,4 @@
-# Etwings algorithmic trading
+# Zaif trading tools
 
 ## Installation
 

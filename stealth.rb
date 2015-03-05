@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 # encoding: utf-8
 
-require 'etwings'
+require 'zaif'
 require 'thor'
 
 if !File.exist?("./config.rb")
@@ -24,7 +24,7 @@ class MyConsole < Thor
     private
     def run(currency, target_price, target_amount, type)
         error("API Key not defined. Please define at \"config.rb\".") if ETWINGS_KEY.empty? || ETWINGS_SECRET.empty?
-        etwings = Etwings::API.new(:api_key => ETWINGS_KEY , :api_secret => ETWINGS_SECRET, :cool_down => false)
+        etwings = Zaif::API.new(:api_key => ETWINGS_KEY , :api_secret => ETWINGS_SECRET, :cool_down => false)
         currency_pair = currency + "_jpy"
         # check type
 
@@ -76,7 +76,7 @@ class MyConsole < Thor
                 end
 
                 # 取引
-                #etwings.trade(currency, price, trade_amount, type)
+                etwings.trade(currency, price, trade_amount, type)
                 
                 # 目的数量から取引分を減らす
                 target_amount -= trade_amount

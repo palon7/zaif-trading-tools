@@ -1,3 +1,4 @@
+# zaif api key
 ETWINGS_KEY   = ''
 ETWINGS_SECRET= ''
 
